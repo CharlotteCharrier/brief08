@@ -92,5 +92,19 @@ classDiagram
         -String nom
         -int solidite
     }
+````
+
+````mermaid
+sequenceDiagram
+    actor Villageois
+    actor Soldats
+    Villageois->>Ressource: part récolter
+    Ressource->>Villageois: ramène les ressources
+    Villageois-)MurDéfense: construit
+    Villageois->>Maison: se repose
+    Soldats->>Village: attaquent
+    destroy MurDéfense
+    MurDéfense->>Soldats: est détruit par
+    Villageois->>Village: reconstruisent
 
 ````
