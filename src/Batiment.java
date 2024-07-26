@@ -36,4 +36,12 @@ public class Batiment {
         this.tempsConstruction = tempsConstruction;
     }
 
+    @Override
+    public String toString() {
+        return "Batiment{" +
+                "solidite=" + solidite +
+                ", ressourcesNecessairesConstruction=" + ressourcesNecessairesConstruction +
+                ", tempsConstruction=" + tempsConstruction +
+                '}';
+    }
 }

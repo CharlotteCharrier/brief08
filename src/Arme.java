@@ -18,6 +18,11 @@ public class Arme {
         this.nom = nom;
     }
 
+    public Arme(String nom, int solidite) {
+        this.nom = nom;
+        this.solidite = solidite;
+    }
+
     @Override
     public String toString() {
         return "Arme{" +

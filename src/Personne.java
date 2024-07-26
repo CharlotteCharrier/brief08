@@ -12,13 +12,13 @@ public abstract class Personne {
     public void seDeplacer(Batiment batiment) {
       this.setCurrentSituation(batiment);
 
-        System.out.println(this.nom + " s'est deplacé vers " + batiment);
+        System.out.println(this.nom + " s'est deplacé vers " + batiment.getClass().toString());
     }
 
     public void seBalader(Village village){
         this.setCurrentVillage(village);
 
-        System.out.println(this.nom + " s'est baladé vers " + village);
+        System.out.println(this.nom + " s'est baladé vers " + village.getNom());
     }
 
     public Personne() {}

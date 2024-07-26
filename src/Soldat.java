@@ -1,18 +1,18 @@
+import java.util.ArrayList;
 import java.util.List;
 
-public class Soldat extends Personne {
+public class Soldat extends Personne implements Chef {
     private List<Arme> listeArmes;
-    private int capaciteDefense;
     private int capaciteAttaque;
     private Caserne currentCaserne;
 
     public Soldat() {
         super();
+        this.listeArmes = new ArrayList<>();
     }
 
-    public Soldat(List<Arme> listeArmes, int capaciteDefense, int capaciteAttaque) {
-        this.listeArmes = listeArmes;
-        this.capaciteDefense = capaciteDefense;
+    public Soldat(List<Arme> listeArmes, int capaciteAttaque) {
+        this.listeArmes = new ArrayList<>();
         this.capaciteAttaque = capaciteAttaque;
     }
 
@@ -22,14 +22,6 @@ public class Soldat extends Personne {
 
     public void setListeArmes(List<Arme> listeArmes) {
         this.listeArmes = listeArmes;
-    }
-
-    public int getCapaciteDefense() {
-        return capaciteDefense;
-    }
-
-    public void setCapaciteDefense(int capaciteDefense) {
-        this.capaciteDefense = capaciteDefense;
     }
 
     public int getCapaciteAttaque() {
@@ -51,18 +43,43 @@ public class Soldat extends Personne {
     public void abriter(Caserne caserne) {
         this.setCurrentCaserne(caserne);
 
-        System.out.println("Le soldat " + this.nom + "s'est abrité dans la caserne " + this.currentCaserne);
+        System.out.println("Le soldat " + this.nom + " s'est abrité dans la caserne " + this.currentCaserne);
+    }
+
+    public void attaquer(Soldat soldatEnnemi) {
+        if(soldatEnnemi.capaciteAttaque > this.capaciteAttaque || soldatEnnemi.capaciteAttaque == this.capaciteAttaque) {
+            System.out.println("L'ennemi était trop fort: " + this.getNom() + " est parti se reposer dans sa caserne");
+            this.setPv(getPv() - 1);
+            this.abriter(this.currentCaserne);
+        } else {
+            this.setCapaciteAttaque(getCapaciteAttaque() + 10);
+            soldatEnnemi.setPv(getPv() - 1);
+            System.out.println(this.getNom() + " a triomphé ! Il remporte la victoire ainsi que 10 points d'attaque supplémentaires !");
+        }
+    }
+
+    public void detruire(Batiment batimentEnnemi){
+        batimentEnnemi.setSolidite(batimentEnnemi.getSolidite() - 10);
+        if(batimentEnnemi.getSolidite() <= 0) {
+            System.out.println("Le soldat: " + this.nom + " a détruit le " + batimentEnnemi);
+        } else {
+            System.out.println("Le " + batimentEnnemi + " est toujours debout");
+        }
     }
 
     @Override
     public String toString() {
         return "Soldat{" +
                 "listeArmes=" + listeArmes +
-                ", capaciteDefense=" + capaciteDefense +
                 ", capaciteAttaque=" + capaciteAttaque +
                 ", currentCaserne=" + currentCaserne +
                 ", pv=" + pv +
                 ", nom='" + nom + '\'' +
                 "} " + super.toString();
+    }
+
+    @Override
+    public void motiver(Soldat soldat) {
+        soldat.setCapaciteAttaque(getCapaciteAttaque() +1);
     }
 }

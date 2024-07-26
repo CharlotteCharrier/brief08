@@ -10,20 +10,33 @@ public class Village {
         return listRessources;
     }
 
-    public void setListRessources(List<Ressource> listRessources) {
-        this.listRessources = listRessources;
+    public void setListRessources(Ressource ressources) {
+        listRessources.add(ressources);
+    }
+
+    public void ajouterRessource(Ressource ressource) {
+        listRessources.add(ressource);
+    }
+
+    public void retirerRessource(Ressource ressource) {
+        listRessources.remove(ressource);
     }
 
     public Village() {
+        this.listeBatiments = new ArrayList<Batiment>();
+        this.listRessources = new ArrayList<Ressource>();
     }
 
     public Village(String nom) {
         this.nom = nom;
+        this.listeBatiments = new ArrayList<Batiment>();
+        this.listRessources = new ArrayList<Ressource>();
     }
 
-    public Village(String nom, List<Batiment> listeBatiments) {
+    public Village(String nom, List<Batiment> listeBatiments, List<Ressource> listRessources) {
         this.nom = nom;
         this.listeBatiments = new ArrayList<Batiment>();
+        this.listRessources = new ArrayList<Ressource>();
     }
 
     public String getNom() {

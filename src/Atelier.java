@@ -9,17 +9,17 @@ public class Atelier extends Batiment{
         this.ressourcesNecessairesConstruction = Ressource.fer;
     }
 
-    public void produireOutil(Artisan artisan) {
-        Outil outil = new Outil();
+    public void produireOutil(Artisan artisan, String nom, int solidite) {
+        Outil outil = new Outil(nom, solidite);
         artisan.getListeOutils().add(outil);
-        System.out.println("L'artisan " + artisan + "a produit un nouvel outil " + outil);
+        System.out.println("L'artisan a produit un nouvel outil");
     }
 
-    public void produireArme(Artisan artisan, Soldat soldat) {
-        Arme arme = new Arme();
+    public void produireArme(Artisan artisan, Soldat soldat, String nom, int solidite) {
+        Arme arme = new Arme(nom, solidite);
 
         soldat.getListeArmes().add(arme);
-        System.out.println("L'artisan " + artisan + "a produit " + arme + "pour le soldat " + soldat);
+        System.out.println("L'artisan a produit une arme pour le soldat");
     }
 
     @Override
