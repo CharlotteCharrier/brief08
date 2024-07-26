@@ -38,9 +38,4 @@ public class Ferme extends Batiment {
                 ", tempsConstruction=" + tempsConstruction +
                 "} " + super.toString();
     }
-
-    //    public void produireNourriture(Villageois villageois) {
-//        villageois.listRessources.add(Ressource.nourriture);
-//        System.out.println("Le villageois " + villageois + "a récolté de la nourriture");
-//    }
 }

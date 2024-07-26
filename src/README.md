@@ -12,6 +12,7 @@ classDiagram
     class Village {
         -String nom
         -List~Batiment~
+        -List~Ressource~
     }
     Batiment <|-- Caserne
     Batiment <|-- Maison
@@ -21,26 +22,26 @@ classDiagram
     
     class Batiment{
         -int solidite
-        -Ressource ressourcesNecessaires
+        -Ressource ressourcesNecessairesConstruction
         -int tempsConstruction
     }
     class Ferme{
         -int ressources
-        +produireNourriture(Ressource)
+        +produireNourriture(Ferme)
     }
     class Caserne{
         -List~Soldat~
     }
     
     class Atelier {
-        +produireOutil(Artisan)
-        +produireArme(Artisan, Soldat)
+        +produireOutil(Artisan, String nom, int solidite)
+        +produireArme(Artisan, Soldat, String nom, int solidite)
     }
     
     Personne <|-- Villageois
     Personne <|-- Soldat
     class Personne{
-        #int pv
+        <<abstract>>>
         #String nom
         #Batiment currentSituation
         #Village currentVillage
@@ -50,6 +51,7 @@ classDiagram
         +abriter(Maison)
         +construire(Batiment)
         +echanger(Ressource, Ressource)
+        +collecter(Ressource)
     }
     class Soldat{
         -List~Arme~ 
@@ -79,7 +81,6 @@ classDiagram
     }
 
     class Artisan{
-        <<interface>>
         -List~Outil~
         +ameliorerBatiment(Batiment)
     }

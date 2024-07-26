@@ -1,11 +1,9 @@
 public abstract class Personne {
-    protected int pv;
     protected String nom;
     protected Batiment currentSituation;
     protected Village currentVillage;
 
-    public Personne(int pv, String nom) {
-        this.pv = pv;
+    public Personne(String nom) {
         this.nom = nom;
     }
 
@@ -22,14 +20,6 @@ public abstract class Personne {
     }
 
     public Personne() {}
-
-    public int getPv() {
-        return pv;
-    }
-
-    public void setPv(int pv) {
-        this.pv = pv;
-    }
 
     public String getNom() {
         return nom;
@@ -58,7 +48,6 @@ public abstract class Personne {
     @Override
     public String toString() {
         return "Personne{" +
-                "pv=" + pv +
                 ", nom='" + nom + '\'' +
                 ", currentSituation=" + currentSituation +
                 ", currentVillage=" + currentVillage +

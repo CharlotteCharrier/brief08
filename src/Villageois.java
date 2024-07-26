@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Villageois extends Personne implements Eclaireur {
     private Maison currentMaison;
 

@@ -19,14 +19,12 @@ public class Main {
         //créer des villageois
         Villageois villageois1 = new Villageois();
         villageois1.setNom("Morgan");
-        villageois1.setPv(10);
         villageois1.setCurrentVillage(village1);
 
         System.out.println("Premier villageois créé : " +  villageois1);
 
         Villageois villageois2 = new Villageois();
         villageois2.setNom("Coralie");
-        villageois2.setPv(10);
         villageois2.setCurrentVillage(village2);
 
         //les villageois peuvent collecter des ressources
@@ -60,7 +58,6 @@ public class Main {
 
         //créer des soldats
         Soldat soldat1 = new Soldat();
-        soldat1.setPv(20);
         soldat1.setCurrentVillage(village1);
         soldat1.setCapaciteAttaque(10);
         soldat1.setCurrentCaserne(caserne1);
@@ -70,14 +67,12 @@ public class Main {
 
         Soldat soldat2 = new Soldat();
         soldat2.setNom("Marie");
-        soldat2.setPv(20);
         soldat2.setCurrentVillage(village1);
         soldat2.setCapaciteAttaque(10);
 
         System.out.println("Second soldat créé : " +  soldat2);
 
         Soldat soldatEnnemi = new Soldat();
-        soldatEnnemi.setPv(20);
         soldatEnnemi.setCurrentVillage(village1);
         soldatEnnemi.setCapaciteAttaque(10);
         soldatEnnemi.setNom("Thibault");
@@ -111,7 +106,6 @@ public class Main {
         //créer des artisans
         Artisan artisan1 = new Artisan();
         artisan1.setNom("Soumaya");
-        artisan1.setPv(10);
         artisan1.setCurrentVillage(village1);
         System.out.println("Artisan créé : " + artisan1);
 

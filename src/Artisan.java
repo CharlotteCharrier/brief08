@@ -30,7 +30,6 @@ public class Artisan extends Personne{
     public String toString() {
         return "Artisan{" +
                 "listeOutils=" + listeOutils +
-                ", pv=" + pv +
                 ", nom='" + nom + '\'' +
                 ", currentSituation=" + currentSituation +
                 ", currentVillage=" + currentVillage +

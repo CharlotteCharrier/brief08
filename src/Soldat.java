@@ -49,11 +49,9 @@ public class Soldat extends Personne implements Chef {
     public void attaquer(Soldat soldatEnnemi) {
         if(soldatEnnemi.capaciteAttaque > this.capaciteAttaque || soldatEnnemi.capaciteAttaque == this.capaciteAttaque) {
             System.out.println("L'ennemi était trop fort: " + this.getNom() + " est parti se reposer dans sa caserne");
-            this.setPv(getPv() - 1);
             this.abriter(this.currentCaserne);
         } else {
             this.setCapaciteAttaque(getCapaciteAttaque() + 10);
-            soldatEnnemi.setPv(getPv() - 1);
             System.out.println(this.getNom() + " a triomphé ! Il remporte la victoire ainsi que 10 points d'attaque supplémentaires !");
         }
     }
@@ -73,7 +71,6 @@ public class Soldat extends Personne implements Chef {
                 "listeArmes=" + listeArmes +
                 ", capaciteAttaque=" + capaciteAttaque +
                 ", currentCaserne=" + currentCaserne +
-                ", pv=" + pv +
                 ", nom='" + nom + '\'' +
                 "} " + super.toString();
     }
