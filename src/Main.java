@@ -21,7 +21,7 @@ public class Main {
         villageois1.setNom("Morgan");
         villageois1.setCurrentVillage(village1);
 
-        System.out.println("Premier villageois créé : " +  villageois1);
+        System.out.println("Premier villageois créé : " +  villageois1.nom);
 
         Villageois villageois2 = new Villageois();
         villageois2.setNom("Coralie");
@@ -63,14 +63,14 @@ public class Main {
         soldat1.setCurrentCaserne(caserne1);
         soldat1.setNom("Omer");
 
-        System.out.println("Premier soldat créé : " +  soldat1);
+        System.out.println("Premier soldat créé : " +  soldat1.nom);
 
         Soldat soldat2 = new Soldat();
         soldat2.setNom("Marie");
         soldat2.setCurrentVillage(village1);
         soldat2.setCapaciteAttaque(10);
 
-        System.out.println("Second soldat créé : " +  soldat2);
+        System.out.println("Second soldat créé : " +  soldat2.nom);
 
         Soldat soldatEnnemi = new Soldat();
         soldatEnnemi.setCurrentVillage(village1);
@@ -107,7 +107,7 @@ public class Main {
         Artisan artisan1 = new Artisan();
         artisan1.setNom("Soumaya");
         artisan1.setCurrentVillage(village1);
-        System.out.println("Artisan créé : " + artisan1);
+        System.out.println("Artisan créé : " + artisan1.nom);
 
         //l'artisan se rend sur son lieu de travail
         artisan1.seDeplacer(atelier1);
@@ -125,6 +125,5 @@ public class Main {
         artisan1.ameliorerBatiment(maison1);
         System.out.println("Solidité de la maison1 après l'amélioration de l'artisan: " + maison1.getSolidite());
 
-//TODO reprendre les schemas mermaid en fonction des changements effectués
     }
 }
